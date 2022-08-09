@@ -310,7 +310,7 @@ export class CapturingBrowser extends StoryPreviewBrowser {
   }
 
   private async waitBrowserMetricsStable(phase: 'preEmit' | 'postEmit') {
-    const mw = new MetricsWatcher(this.page, this.opt.metricsWatchRetryCount);
+    const mw = new MetricsWatcher(this.page, this.opt.metricsWatchRetryCount, this.opt.metricsWatchInterval);
     const checkCountUntillStable = await mw.waitForStable();
     this.debug(`[${phase}] Browser metrics got stable in ${checkCountUntillStable} times checks.`);
     if (checkCountUntillStable >= this.opt.metricsWatchRetryCount) {

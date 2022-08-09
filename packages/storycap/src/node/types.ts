@@ -32,6 +32,7 @@ export interface MainOptions extends BaseBrowserOptions {
   disableWaitAssets: boolean;
   parallel: number;
   metricsWatchRetryCount: number;
+  metricsWatchInterval: number;
   chromiumChannel: ChromeChannel;
   chromiumPath: string;
   launchOptions: LaunchOptions;

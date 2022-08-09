@@ -20,7 +20,7 @@ export class MetricsWatcher {
   private length = 3;
   private previous: Metrics[] = [];
 
-  constructor(private page: Page, private count: number = 1000) {}
+  constructor(private page: Page, private count: number = 1000, private interval: number = 16) {}
 
   /**
    *
@@ -37,7 +37,7 @@ export class MetricsWatcher {
   async waitForStable() {
     for (let i = 0; i < this.count; ++i) {
       if (await this.check()) return i;
-      await sleep(16);
+      await sleep(this.interval);
     }
     return this.count;
   }

@@ -48,6 +48,11 @@ function createOptions(): MainOptions {
       default: 1000,
       description: 'Number of count to retry until browser metrics stable.',
     })
+    .option('metricsWatchInterval', {
+      number: true,
+      default: 16,
+      description: 'Number of interval to retry until browser metrics stable.',
+    })
     .option('viewportDelay', {
       number: true,
       default: 300,
@@ -112,6 +117,7 @@ function createOptions(): MainOptions {
     captureTimeout,
     captureMaxRetryCount,
     metricsWatchRetryCount,
+    metricsWatchInterval,
     viewportDelay,
     reloadAfterChangeViewport,
     stateChangeDelay,
@@ -157,6 +163,7 @@ function createOptions(): MainOptions {
     captureTimeout,
     captureMaxRetryCount,
     metricsWatchRetryCount,
+    metricsWatchInterval,
     viewportDelay,
     reloadAfterChangeViewport,
     stateChangeDelay,
